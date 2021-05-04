@@ -1,0 +1,2535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Estimation</title>
+    <link class="icon" rel="shortcut icon" href="./icon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="flex-wrapper">
+        <div class="calculator-content">
+            <div class="calculator-content-title">
+                <h1>Рассчитайте трудозатраты на разработку</h1>
+            </div>
+            <div class="calculator-content-body">
+                <div class="calculator-content-body-left">
+                    <div class="calculator-content-body-left-inputs">
+                        <div class="pert-title">
+                            <h2>Предварительная оценка (PERT, COCOMO II, FP)</h2>
+                        </div>
+                        <div class="pert-title">
+                            <h3>Экспертные оценки по количеству строк кода</h3>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class="input-table">
+                                <table>
+                                    <tr>
+                                        <td>Оценка</td>
+                                        <td>SLOC (EIF)</td>
+                                        <td>SLOC (EIF)</td>
+                                        <td>SLOC (EI)</td>
+                                        <td>SLOC (EO)</td>
+                                        <td>SLOC (EQ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Пессимистичная</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Наиболее вероятная</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Оптимистичная</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="pert-title">
+                            <h3>Экспертная оценка функциональных точек</h3>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class="input-table">
+                                <table>
+                                    <tr>
+                                        <td>Оценка</td>
+                                        <td>UFP (ILF)</td>
+                                        <td>UFP (EIF)</td>
+                                        <td>UFP (EI)</td>
+                                        <td>UFP (EO)</td>
+                                        <td>UFP (EQ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Пессимистичная</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-ufp-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-ufp-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-ufp-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-ufp-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-ufp-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-ufp-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-ufp-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-ufp-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="pes-ufp-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "pes-ufp-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Наиболее вероятная</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-ufp-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-ufp-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-ufp-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-ufp-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-ufp-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-ufp-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-ufp-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-ufp-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="naib-ufp-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "naib-ufp-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Оптимистичная</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-ufp-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-ufp-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-ufp-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-ufp-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-ufp-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-ufp-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-ufp-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-ufp-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="opt-ufp-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "opt-ufp-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="cost-drivers-title">
+                            <h3>Предварительная оценка драйверов затрат</h3>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class = "option-table">
+                                <table>
+                                    <tr>
+                                        <td>Драйвер</td>
+                                        <td>Влияние</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PERS</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pers" onchange="calculatePredPm()">
+                                                    <option value="2.12">Extr Low</option>
+                                                    <option value="1.62">Very Low</option>
+                                                    <option value="1.26">Low</option>
+                                                    <option value="1.00" selected = "selected">Nominal</option>
+                                                    <option value="0.83">High</option>
+                                                    <option value="0.63">Very High</option>
+                                                    <option value="0.50">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PREX</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="prex" onchange="calculatePredPm()">
+                                                    <option value="1.59">Extr Low</option>
+                                                    <option value="1.33">Very Low</option>
+                                                    <option value="1.22">Low</option>
+                                                    <option value="1.00" selected = "selected">Nominal</option>
+                                                    <option value="0.87">High</option>
+                                                    <option value="0.74">Very High</option>
+                                                    <option value="0.62">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>RCPX</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="rcpx" onchange="calculatePredPm()">
+                                                    <option value="0.49">Extr Low</option>
+                                                    <option value="0.60">Very Low</option>
+                                                    <option value="0.83">Low</option>
+                                                    <option value="1.00" selected = "selected">Nominal</option>
+                                                    <option value="1.33">High</option>
+                                                    <option value="1.91">Very High</option>
+                                                    <option value="2.72">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>RUSE</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="ruse" onchange="calculatePredPm()">
+                                                    <option value="0.95">Low</option>
+                                                    <option value="1.00" selected = "selected">Nominal</option>
+                                                    <option value="1.07">High</option>
+                                                    <option value="1.15">Very High</option>
+                                                    <option value="1.24">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PDIF</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pdif" onchange="calculatePredPm()">
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1.00" selected = "selected">Nominal</option>
+                                                    <option value="1.29">High</option>
+                                                    <option value="1.81">Very High</option>
+                                                    <option value="2.61">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FCIL</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="fcil" onchange="calculatePredPm()">
+                                                    <option value="1.43">Extr Low</option>
+                                                    <option value="1.30">Very Low</option>
+                                                    <option value="1.10">Low</option>
+                                                    <option value="1.00" selected = "selected">Nominal</option>
+                                                    <option value="0.87">High</option>
+                                                    <option value="0.73">Very High</option>
+                                                    <option value="0.62">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>SCED</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="sced" onchange="calculatePredPm()">
+                                                    <option value="1.43">Very Low</option>
+                                                    <option value="1.14">Low</option>
+                                                    <option value="1.00" selected = "selected">Nominal</option>
+                                                    <option value="1.00">High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Предварительная оценка факторов масштаба</h3>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class = "option-table">
+                                <table>
+                                    <tr>
+                                        <td>Фактор</td>
+                                        <td>Влияние</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PREC</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="prec" onchange = "calculatePredPm()"  >
+                                                    <option value="6.20">Very Low</option>
+                                                    <option value="4.96">Low</option>
+                                                    <option value="3.72" selected = "selected">Nominal</option>
+                                                    <option value="2.48">High</option>
+                                                    <option value="1.24">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FLEX</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="flex" onchange = "calculatePredPm()">
+                                                    <option value="5.07">Very Low</option>
+                                                    <option value="4.05">Low</option>
+                                                    <option value="3.04" selected = "selected">Nominal</option>
+                                                    <option value="2.03">High</option>
+                                                    <option value="1.01">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>RESL</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="resl" onchange = "calculatePredPm()">
+                                                    <option value="7.07">Very Low</option>
+                                                    <option value="5.65">Low</option>
+                                                    <option value="4.24" selected = "selected">Nominal</option>
+                                                    <option value="2.83">High</option>
+                                                    <option value="1.41">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TEAM</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="team" onchange = "calculatePredPm()">
+                                                    <option value="5.48">Very Low</option>
+                                                    <option value="4.38">Low</option>
+                                                    <option value="3.29" selected = "selected">Nominal</option>
+                                                    <option value="2.19">High</option>
+                                                    <option value="1.10">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PMAT</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pmat" onchange = "calculatePredPm()">
+                                                    <option value="7.80">Very Low</option>
+                                                    <option value="6.24">Low</option>
+                                                    <option value="4.68" selected = "selected">Nominal</option>
+                                                    <option value="3.12">High</option>
+                                                    <option value="1.56">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="function-points-content-title">
+                            <h2>Детализированная оценка трудозатрат (COCOMO II, FP)</h2>
+                        </div>
+                        <div class="function-points-content-title">
+                            <h3>Расчет количества функциональных точек</h3>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class="title"> Unadjusted Function Points (ILF) </div>
+                            <div class="input">
+                                <input type = "number" id = "ufp-ilf" value = "0">
+                            </div>
+                            <div class="input">
+                                <input type = "range" min = "0" max = "100" id = "ufp-ilf-range" value = "0" class="input-range">
+                            </div>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class="title">Unadjusted Function Points (EIF)</div>
+                            <div class="input">
+                                <input type = "number" id = "ufp-eif" value = "0">
+                            </div>
+                            <div class = "input">
+                                <input type = "range" min = "0" max = "100" id = "ufp-eif-range" value = "0" class="input-range">
+                            </div>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class="title">Unadjusted Function Points (EI)</div>
+                            <div class="input">
+                                <input type = "number" id = "ufp-ei" value = "0">
+                            </div>
+                            <div class = "input">
+                                <input type = "range" min = "0" max = "100" id = "ufp-ei-range" value = "0" class="input-range">
+                            </div>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class="title">Unadjusted Function Points (EO)</div>
+                            <div class="input">
+                                <input type = "number" id = "ufp-eo" value = "0">
+                            </div>
+                            <div class = "input">
+                                <input type = "range" min = "0" max = "100" id = "ufp-eo-range" value = "0" class="input-range">
+                            </div>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class="title">Unadjusted Function Points (EQ)</div>
+                            <div class="input">
+                                <input type = "number" id = "ufp-eq" value = "0">
+                            </div>
+                            <div class = "input">
+                                <input type = "range" min = "0" max = "100" id = "ufp-eq-range" value = "0" class="input-range">
+                            </div>
+                        </div>
+                        <div class="sloc-count-title">
+                            <h3>Расчет количества строк кода (SLOC)</h3>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class="input-table">
+                                <table>
+                                    <tr>
+                                        <td>Учет факторов переиспользования</td>
+                                        <td>SLOC (ILF)</td>
+                                        <td>SLOC (EIF)</td>
+                                        <td>SLOC (EI)</td>
+                                        <td>SLOC (EO)</td>
+                                        <td>SLOC (EQ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NewSLOC</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="new-sloc-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "new-sloc-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="new-sloc-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "new-sloc-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="new-sloc-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "new-sloc-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="new-sloc-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "new-sloc-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="new-sloc-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "new-sloc-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>RepeatedSLOC</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="repeated-sloc-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "repeated-sloc-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id = "repeated-sloc-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "repeated-sloc-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="repeated-sloc-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "repeated-sloc-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="repeated-sloc-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "repeated-sloc-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="repeated-sloc-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "repeated-sloc-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>AT</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="at-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "at-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="at-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "at-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="at-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "at-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="at-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "at-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="at-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "at-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>AA</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id = "aa-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "8" id = "aa-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="aa-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "8" id = "aa-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="aa-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "8" id = "aa-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="aa-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "8" id = "aa-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="aa-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "8" id = "aa-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>DM</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="dm-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "dm-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="dm-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "dm-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="dm-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "dm-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="dm-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "dm-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="dm-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "dm-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>CM</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="cm-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "cm-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="cm-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "cm-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="cm-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "cm-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="cm-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "cm-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="cm-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "cm-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>IM</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="im-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "im-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="im-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "im-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="im-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "im-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="im-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "im-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="im-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "im-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>SU</td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="su-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "10" max = "50" id = "su-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="su-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "10" max = "50" id = "su-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="su-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "10" max = "50" id = "su-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="su-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "10" max = "50" id = "su-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="su-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "10" max = "50" id = "su-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="deleted-sloc-title">
+                            <h3>Процент кода, выброшенного из-за изменений в требованиях (Kreq)</h3>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class="input-table">
+                                <table>
+                                    <tr>
+                                        <td>ILF</td>
+                                        <td>EIF</td>
+                                        <td>EI</td>
+                                        <td>EO</td>
+                                        <td>EQ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="del-ilf" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "del-ilf-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="del-eif" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "del-eif-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="del-ei" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "del-ei-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="del-eo" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "del-eo-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <input type = "number" id ="del-eq" value = "0">
+                                            </div>
+                                            <div class="input">
+                                                <input type = "range" min = "0" max = "100" id = "del-eq-range" value = "0" class="input-range">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="cost-drivers-title">
+                            <h3>Драйверы затрат(EAF) </h3>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class = "option-table">
+                                <table>
+                                    <tr>
+                                        <td>Драйвер</td>
+                                        <td>ILF</td>
+                                        <td>EIF</td>
+                                        <td>EI</td>
+                                        <td>EO</td>
+                                        <td>EQ</td>
+                                    </tr>
+                                    <tr align = "center">
+                                        <td></td>
+                                        <td colspan = "5">Драйверы продукта</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RELY</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="rely-ilf" onchange="calculatePm()">
+                                                    <option value="0.84">Very Low</option>
+                                                    <option value="0.92">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.10">High</option>
+                                                    <option value="1.26">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="rely-eif" onchange="calculatePm()">
+                                                    <option value="0.84">Very Low</option>
+                                                    <option value="0.92">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.10">High</option>
+                                                    <option value="1.26">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="rely-ei" onchange="calculatePm()">
+                                                    <option value="0.84">Very Low</option>
+                                                    <option value="0.92">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.10">High</option>
+                                                    <option value="1.26">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="rely-eo" onchange="calculatePm()">
+                                                    <option value="0.84">Very Low</option>
+                                                    <option value="0.92">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.10">High</option>
+                                                    <option value="1.26">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="rely-eq" onchange="calculatePm()">
+                                                    <option value="0.84">Very Low</option>
+                                                    <option value="0.92">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.10">High</option>
+                                                    <option value="1.26">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>DATA</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="data-ilf" onchange="calculatePm()">
+                                                    <option value="0.23">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.14">High</option>
+                                                    <option value="1.28">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="data-eif" onchange="calculatePm()">
+                                                    <option value="0.23">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.14">High</option>
+                                                    <option value="1.28">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="data-ei" onchange="calculatePm()">
+                                                    <option value="0.23">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.14">High</option>
+                                                    <option value="1.28">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="data-eo" onchange="calculatePm()">
+                                                    <option value="0.23">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.14">High</option>
+                                                    <option value="1.28">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="data-eq" onchange="calculatePm()">
+                                                    <option value="0.23">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.14">High</option>
+                                                    <option value="1.28">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>CPLX</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="cplx-ilf" onchange="calculatePm()">
+                                                    <option value="0.73">Very Low</option>
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.17">High</option>
+                                                    <option value="1.34">Very High</option>
+                                                    <option value="1.74">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="cplx-eif" onchange="calculatePm()">
+                                                    <option value="0.73">Very Low</option>
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.17">High</option>
+                                                    <option value="1.34">Very High</option>
+                                                    <option value="1.74">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="cplx-ei" onchange="calculatePm()">
+                                                    <option value="0.73">Very Low</option>
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.17">High</option>
+                                                    <option value="1.34">Very High</option>
+                                                    <option value="1.74">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="cplx-eo" onchange="calculatePm()">
+                                                    <option value="0.73">Very Low</option>
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.17">High</option>
+                                                    <option value="1.34">Very High</option>
+                                                    <option value="1.74">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="cplx-eq" onchange="calculatePm()">
+                                                    <option value="0.73">Very Low</option>
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.17">High</option>
+                                                    <option value="1.34">Very High</option>
+                                                    <option value="1.74">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>REUSE</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="reuse-ilf" onchange="calculatePm()">
+                                                    <option value="0.95">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.07">High</option>
+                                                    <option value="1.15">Very High</option>
+                                                    <option value="1.24">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="reuse-eif" onchange="calculatePm()">
+                                                    <option value="0.95">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.07">High</option>
+                                                    <option value="1.15">Very High</option>
+                                                    <option value="1.24">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="reuse-ei" onchange="calculatePm()">
+                                                    <option value="0.95">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.07">High</option>
+                                                    <option value="1.15">Very High</option>
+                                                    <option value="1.24">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="reuse-eo" onchange="calculatePm()">
+                                                    <option value="0.95">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.07">High</option>
+                                                    <option value="1.15">Very High</option>
+                                                    <option value="1.24">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="reuse-eq" onchange="calculatePm()">
+                                                    <option value="0.95">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.07">High</option>
+                                                    <option value="1.15">Very High</option>
+                                                    <option value="1.24">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>DOCU</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="docu-ilf" onchange="calculatePm()">
+                                                    <option value="0.81">Very Low</option>
+                                                    <option value="0.91">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.23">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="docu-eif" onchange="calculatePm()">
+                                                    <option value="0.81">Very Low</option>
+                                                    <option value="0.91">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.23">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="docu-ei" onchange="calculatePm()">
+                                                    <option value="0.81">Very Low</option>
+                                                    <option value="0.91">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.23">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="docu-eo" onchange="calculatePm()">
+                                                    <option value="0.81">Very Low</option>
+                                                    <option value="0.91">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.23">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="docu-eq" onchange="calculatePm()">
+                                                    <option value="0.81">Very Low</option>
+                                                    <option value="0.91">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.23">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td></td>
+                                        <td colspan="5">Драйверы персонала</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ACAP</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="acap-ilf" onchange="calculatePm()">
+                                                    <option value="1.42">Very Low</option>
+                                                    <option value="1.29">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.85">High</option>
+                                                    <option value="0.71">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="acap-eif" onchange="calculatePm()">
+                                                    <option value="1.42">Very Low</option>
+                                                    <option value="1.29">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.85">High</option>
+                                                    <option value="0.71">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="acap-ei" onchange="calculatePm()">
+                                                    <option value="1.42">Very Low</option>
+                                                    <option value="1.29">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.85">High</option>
+                                                    <option value="0.71">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="acap-eo" onchange="calculatePm()">
+                                                    <option value="1.42">Very Low</option>
+                                                    <option value="1.29">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.85">High</option>
+                                                    <option value="0.71">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="acap-eq" onchange="calculatePm()">
+                                                    <option value="1.42">Very Low</option>
+                                                    <option value="1.29">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.85">High</option>
+                                                    <option value="0.71">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>AEXP</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="aexp-ilf" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.10">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="aexp-eif" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.10">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="aexp-ei" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.10">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="aexp-eo" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.10">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="aexp-eq" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.10">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PCAP</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcap-ilf" onchange="calculatePm()">
+                                                    <option value="1.34">Very Low</option>
+                                                    <option value="1.15">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.76">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcap-eif" onchange="calculatePm()">
+                                                    <option value="1.34">Very Low</option>
+                                                    <option value="1.15">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.76">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcap-ei">
+                                                    <option value="1.34">Very Low</option>
+                                                    <option value="1.15">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.76">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcap-eo" onchange="calculatePm()">
+                                                    <option value="1.34">Very Low</option>
+                                                    <option value="1.15">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.76">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcap-eq" onchange="calculatePm()">
+                                                    <option value="1.34">Very Low</option>
+                                                    <option value="1.15">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.88">High</option>
+                                                    <option value="0.76">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PCON</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcon-ilf" onchange="calculatePm()">
+                                                    <option value="1.29">Very Low</option>
+                                                    <option value="1.12">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcon-eif" onchange="calculatePm()">
+                                                    <option value="1.29">Very Low</option>
+                                                    <option value="1.12">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcon-ei" onchange="calculatePm()">
+                                                    <option value="1.29">Very Low</option>
+                                                    <option value="1.12">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcon-eo" onchange="calculatePm()">
+                                                    <option value="1.29">Very Low</option>
+                                                    <option value="1.12">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pcon-eq" onchange="calculatePm()">
+                                                    <option value="1.29">Very Low</option>
+                                                    <option value="1.12">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.81">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PEXP</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pexp-ilf" onchange="calculatePm()">
+                                                    <option value="1.19">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.85">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pexp-eif" onchange="calculatePm()">
+                                                    <option value="1.19">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.85">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pexp-ei" onchange="calculatePm()">
+                                                    <option value="1.19">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.85">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pexp-eo" onchange="calculatePm()">
+                                                    <option value="1.19">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.85">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pexp-eq" onchange="calculatePm()">
+                                                    <option value="1.19">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.85">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LTEX</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="ltex-ilf" onchange="calculatePm()">
+                                                    <option value="1.20">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.84">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="ltex-eif" onchange="calculatePm()">
+                                                    <option value="1.20">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.84">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="ltex-ei" onchange="calculatePm()">
+                                                    <option value="1.20">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.84">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="ltex-eo" onchange="calculatePm()">
+                                                    <option value="1.20">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.84">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="ltex-eq" onchange="calculatePm()">
+                                                    <option value="1.20">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.91">High</option>
+                                                    <option value="0.84">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td></td>
+                                        <td colspan="5">Драйверы аппаратного обеспечения</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TIME</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="time-ilf" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.29">Very High</option>
+                                                    <option value="1.63">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="time-eif" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.29">Very High</option>
+                                                    <option value="1.63">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="time-ei" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.29">Very High</option>
+                                                    <option value="1.63">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="time-eo" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.29">Very High</option>
+                                                    <option value="1.63">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="time-eq" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.11">High</option>
+                                                    <option value="1.29">Very High</option>
+                                                    <option value="1.63">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>STOR</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="stor-ilf" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.05">High</option>
+                                                    <option value="1.17">Very High</option>
+                                                    <option value="1.46">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="stor-eif" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.05">High</option>
+                                                    <option value="1.17">Very High</option>
+                                                    <option value="1.46">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="stor-ei" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.05">High</option>
+                                                    <option value="1.17">Very High</option>
+                                                    <option value="1.46">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="stor-eo" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.05">High</option>
+                                                    <option value="1.17">Very High</option>
+                                                    <option value="1.46">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="stor-eq" onchange="calculatePm()">
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.05">High</option>
+                                                    <option value="1.17">Very High</option>
+                                                    <option value="1.46">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PVOL</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pvol-ilf" onchange="calculatePm()">
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.15">High</option>
+                                                    <option value="1.30">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pvol-eif" onchange="calculatePm()">
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.15">High</option>
+                                                    <option value="1.30">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pvol-ei" onchange="calculatePm()">
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.15">High</option>
+                                                    <option value="1.30">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pvol-eo" onchange="calculatePm()">
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.15">High</option>
+                                                    <option value="1.30">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pvol-eq" onchange="calculatePm()">
+                                                    <option value="0.87">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1.15">High</option>
+                                                    <option value="1.30">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td></td>
+                                        <td colspan = "5">Драйверы проекта</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TOOL</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="tool-ilf" onchange="calculatePm()">
+                                                    <option value="1.17">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.78">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="tool-eif" onchange="calculatePm()">
+                                                    <option value="1.17">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.78">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="tool-ei" onchange="calculatePm()">
+                                                    <option value="1.17">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.78">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="tool-eo" onchange="calculatePm()">
+                                                    <option value="1.17">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.78">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="tool-eq" onchange="calculatePm()">
+                                                    <option value="1.17">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.9">High</option>
+                                                    <option value="0.78">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>SITE</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="site-ilf" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.93">High</option>
+                                                    <option value="0.86">Very High</option>
+                                                    <option value="0.80">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="site-eif" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.93">High</option>
+                                                    <option value="0.86">Very High</option>
+                                                    <option value="0.80">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="site-ei" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.93">High</option>
+                                                    <option value="0.86">Very High</option>
+                                                    <option value="0.80">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="site-eo" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.93">High</option>
+                                                    <option value="0.86">Very High</option>
+                                                    <option value="0.80">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="site-eq" onchange="calculatePm()">
+                                                    <option value="1.22">Very Low</option>
+                                                    <option value="1.09">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="0.93">High</option>
+                                                    <option value="0.86">Very High</option>
+                                                    <option value="0.80">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>SCED</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="sced-ilf" onchange="calculatePm()">
+                                                    <option value="1.43">Very Low</option>
+                                                    <option value="1.14">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1">High</option>
+                                                    <option value="1">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="sced-eif" onchange="calculatePm()">
+                                                    <option value="1.43">Very Low</option>
+                                                    <option value="1.14">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1">High</option>
+                                                    <option value="1">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="sced-ei" onchange="calculatePm()">
+                                                    <option value="1.43">Very Low</option>
+                                                    <option value="1.14">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1">High</option>
+                                                    <option value="1">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="sced-eo" onchange="calculatePm()">
+                                                    <option value="1.43">Very Low</option>
+                                                    <option value="1.14">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1">High</option>
+                                                    <option value="1">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="sced-eq" onchange="calculatePm()">
+                                                    <option value="1.43">Very Low</option>
+                                                    <option value="1.14">Low</option>
+                                                    <option value="1" selected = "selected">Nominal</option>
+                                                    <option value="1">High</option>
+                                                    <option value="1">Very High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="scale-factors-title">
+                            <h3>Факторы масштаба (W)</h3>
+                        </div>
+                        <div class = "input-wrapper">
+                            <div class = "scale-table">
+                                <table>
+                                    <tr>
+                                        <td>Фактор</td>
+                                        <td>ILF</td>
+                                        <td>EIF</td>
+                                        <td>EI</td>
+                                        <td>EO</td>
+                                        <td>EQ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PREC</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="prec-ilf" onchange = "calculatePm()"  >
+                                                    <option value="6.20">Very Low</option>
+                                                    <option value="4.96">Low</option>
+                                                    <option value="3.72" selected = "selected">Nominal</option>
+                                                    <option value="2.48">High</option>
+                                                    <option value="1.24">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="prec-eif" onchange = "calculatePm()">
+                                                    <option value="6.20">Very Low</option>
+                                                    <option value="4.96">Low</option>
+                                                    <option value="3.72" selected = "selected">Nominal</option>
+                                                    <option value="2.48">High</option>
+                                                    <option value="1.24">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="prec-ei" onchange = "calculatePm()">
+                                                    <option value="6.20">Very Low</option>
+                                                    <option value="4.96">Low</option>
+                                                    <option value="3.72" selected = "selected">Nominal</option>
+                                                    <option value="2.48">High</option>
+                                                    <option value="1.24">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="prec-eo" onchange = "calculatePm()">
+                                                    <option value="6.20">Very Low</option>
+                                                    <option value="4.96">Low</option>
+                                                    <option value="3.72" selected = "selected">Nominal</option>
+                                                    <option value="2.48">High</option>
+                                                    <option value="1.24">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="prec-eq" onchange = "calculatePm()">
+                                                    <option value="6.20">Very Low</option>
+                                                    <option value="4.96">Low</option>
+                                                    <option value="3.72" selected = "selected">Nominal</option>
+                                                    <option value="2.48">High</option>
+                                                    <option value="1.24">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FLEX</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="flex-ilf" onchange = "calculatePm()">
+                                                    <option value="5.07">Very Low</option>
+                                                    <option value="4.05">Low</option>
+                                                    <option value="3.04" selected = "selected">Nominal</option>
+                                                    <option value="2.03">High</option>
+                                                    <option value="1.01">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="flex-eif" onchange = "calculatePm()">
+                                                    <option value="5.07">Very Low</option>
+                                                    <option value="4.05">Low</option>
+                                                    <option value="3.04" selected = "selected">Nominal</option>
+                                                    <option value="2.03">High</option>
+                                                    <option value="1.01">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="flex-ei" onchange = "calculatePm()">
+                                                    <option value="5.07">Very Low</option>
+                                                    <option value="4.05">Low</option>
+                                                    <option value="3.04" selected = "selected">Nominal</option>
+                                                    <option value="2.03">High</option>
+                                                    <option value="1.01">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="flex-eo" onchange = "calculatePm()">
+                                                    <option value="5.07">Very Low</option>
+                                                    <option value="4.05">Low</option>
+                                                    <option value="3.04" selected = "selected">Nominal</option>
+                                                    <option value="2.03">High</option>
+                                                    <option value="1.01">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="flex-eq" onchange = "calculatePm()">
+                                                    <option value="5.07">Very Low</option>
+                                                    <option value="4.05">Low</option>
+                                                    <option value="3.04" selected = "selected">Nominal</option>
+                                                    <option value="2.03">High</option>
+                                                    <option value="1.01">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>RESL</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="resl-ilf" onchange = "calculatePm()">
+                                                    <option value="7.07">Very Low</option>
+                                                    <option value="5.65">Low</option>
+                                                    <option value="4.24" selected = "selected">Nominal</option>
+                                                    <option value="2.83">High</option>
+                                                    <option value="1.41">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="resl-eif" onchange = "calculatePm()">
+                                                    <option value="7.07">Very Low</option>
+                                                    <option value="5.65">Low</option>
+                                                    <option value="4.24" selected = "selected">Nominal</option>
+                                                    <option value="2.83">High</option>
+                                                    <option value="1.41">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="resl-ei" onchange = "calculatePm()">
+                                                    <option value="7.07">Very Low</option>
+                                                    <option value="5.65">Low</option>
+                                                    <option value="4.24" selected = "selected">Nominal</option>
+                                                    <option value="2.83">High</option>
+                                                    <option value="1.41">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="resl-eo" onchange = "calculatePm()">
+                                                    <option value="7.07">Very Low</option>
+                                                    <option value="5.65">Low</option>
+                                                    <option value="4.24" selected = "selected">Nominal</option>
+                                                    <option value="2.83">High</option>
+                                                    <option value="1.41">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="resl-eq" onchange = "calculatePm()">
+                                                    <option value="7.07">Very Low</option>
+                                                    <option value="5.65">Low</option>
+                                                    <option value="4.24" selected = "selected">Nominal</option>
+                                                    <option value="2.83">High</option>
+                                                    <option value="1.41">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TEAM</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="team-ilf" onchange = "calculatePm()">
+                                                    <option value="5.48">Very Low</option>
+                                                    <option value="4.38">Low</option>
+                                                    <option value="3.29" selected = "selected">Nominal</option>
+                                                    <option value="2.19">High</option>
+                                                    <option value="1.10">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="team-eif" onchange = "calculatePm()">
+                                                    <option value="5.48">Very Low</option>
+                                                    <option value="4.38">Low</option>
+                                                    <option value="3.29" selected = "selected">Nominal</option>
+                                                    <option value="2.19">High</option>
+                                                    <option value="1.10">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="team-ei" onchange = "calculatePm()">
+                                                    <option value="5.48">Very Low</option>
+                                                    <option value="4.38">Low</option>
+                                                    <option value="3.29" selected = "selected">Nominal</option>
+                                                    <option value="2.19">High</option>
+                                                    <option value="1.10">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="team-eo" onchange = "calculatePm()">
+                                                    <option value="5.48">Very Low</option>
+                                                    <option value="4.38">Low</option>
+                                                    <option value="3.29" selected = "selected">Nominal</option>
+                                                    <option value="2.19">High</option>
+                                                    <option value="1.10">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="team-eq" onchange = "calculatePm()">
+                                                    <option value="5.48">Very Low</option>
+                                                    <option value="4.38">Low</option>
+                                                    <option value="3.29" selected = "selected">Nominal</option>
+                                                    <option value="2.19">High</option>
+                                                    <option value="1.10">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PMAT</td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pmat-ilf" onchange = "calculatePm()">
+                                                    <option value="7.80">Very Low</option>
+                                                    <option value="6.24">Low</option>
+                                                    <option value="4.68" selected = "selected">Nominal</option>
+                                                    <option value="3.12">High</option>
+                                                    <option value="1.56">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pmat-eif" onchange = "calculatePm()">
+                                                    <option value="7.80">Very Low</option>
+                                                    <option value="6.24">Low</option>
+                                                    <option value="4.68" selected = "selected">Nominal</option>
+                                                    <option value="3.12">High</option>
+                                                    <option value="1.56">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pmat-ei" onchange = "calculatePm()">
+                                                    <option value="7.80">Very Low</option>
+                                                    <option value="6.24">Low</option>
+                                                    <option value="4.68" selected = "selected">Nominal</option>
+                                                    <option value="3.12">High</option>
+                                                    <option value="1.56">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pmat-eo" onchange = "calculatePm()">
+                                                    <option value="7.80">Very Low</option>
+                                                    <option value="6.24">Low</option>
+                                                    <option value="4.68" selected = "selected">Nominal</option>
+                                                    <option value="3.12">High</option>
+                                                    <option value="1.56">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input">
+                                                <select id="pmat-eq" onchange = "calculatePm()">
+                                                    <option value="7.80">Very Low</option>
+                                                    <option value="6.24">Low</option>
+                                                    <option value="4.68" selected = "selected">Nominal</option>
+                                                    <option value="3.12">High</option>
+                                                    <option value="1.56">Very High</option>
+                                                    <option value="0.00">Extr High</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-content-body-right">
+                    <div class="final-results-wrapper">
+                        <div class = "perspective">
+                            <div class="final-result-item">
+                                <div class="title">Ожидаемый размер системы (в тысячах) </div>
+                                <div class="value" id="e-ksloc">0<span> KSLOC</span></div>
+                            </div>
+                            <div class="final-result-item">
+                                <div class="title">Ожидаемые трудозатраты (чел.мес) </div>
+                                <div class="value" id="e-size">0<span> чел.мес</span></div>
+                            </div>
+                            <div class="final-result-item">
+                                <div class = "line">
+                                    <div class="title">___________________________________</div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="sloc-table">
+                            <tr class = "str-main">
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">KSLOC (ILF) </div>
+                                        <div class="value" id="size-ilf">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">KSLOC (EIF) </div>
+                                        <div class="value" id="size-eif">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">KSLOC (EI) </div>
+                                        <div class="value" id="size-ei">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">KSLOC (EO) </div>
+                                        <div class="value" id="size-eo">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">KSLOC (EQ) </div>
+                                        <div class="value" id="size-eq">0<span></span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class = "str">
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">FP_KSLOC(ILF) </div>
+                                        <div class="value" id="fp-sloc-ilf">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">FP_KSLOC(EIF) </div>
+                                        <div class="value" id="fp-sloc-eif">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">FP_KSLOC(EI) </div>
+                                        <div class="value" id="fp-sloc-ei">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">FP_KSLOC(EO) </div>
+                                        <div class="value" id="fp-sloc-eo">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                <div class="final-result-item">
+                                    <div class="title">FP_KSLOC(EQ) </div>
+                                    <div class="value" id="fp-sloc-eq">0<span></span></div>
+                                </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="final-result-item">
+                            <div class="title">Итоговый размер системы (FP_KSLOC)</div>
+                            <div class="value" id="fp-sloc">0<span id = "diff-ksloc"> KSLOC</span></div>
+                        </div>
+                        <table class="sloc-table">
+                            <tr class = "str-main">
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">EAF(ILF) </div>
+                                        <div class="value" id="eaf-ilf">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">EAF(EIF) </div>
+                                        <div class="value" id="eaf-eif">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">EAF(EI) </div>
+                                        <div class="value" id="eaf-ei">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">EAF(EO) </div>
+                                        <div class="value" id="eaf-eo">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">EAF(EQ) </div>
+                                        <div class="value" id="eaf-eq">0<span></span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="sloc-table">
+                            <tr class = "str-main">
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">B (ILF) </div>
+                                        <div class="value" id="b-ilf">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">B (EIF) </div>
+                                        <div class="value" id="b-eif">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">B (EI) </div>
+                                        <div class="value" id="b-ei">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">B (EO) </div>
+                                        <div class="value" id="b-eo">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">B (EQ) </div>
+                                        <div class="value" id="b-eq">0<span></span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="sloc-table">
+                            <tr class = "str-main">
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">Трудозатраты (ILF) </div>
+                                        <div class="value" id="pm-ilf">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">Трудозатраты (EIF) </div>
+                                        <div class="value" id="pm-eif">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">Трудозатраты (EI) </div>
+                                        <div class="value" id="pm-ei">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">Трудозатраты (EO) </div>
+                                        <div class="value" id="pm-eo">0<span></span></div>
+                                    </div>
+                                </td>
+                                <td class = "cell">
+                                    <div class="final-result-item">
+                                        <div class="title">Трудозатраты (EQ) </div>
+                                        <div class="value" id="pm-eq">0<span></span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="final-result-item">
+                            <div class="title">Итоговые трудозатраты на разработку (чел.мес.)</div>
+                            <div class="value" id="total-pm">0<span id = "diff-pm"> чел.мес.</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <script src="main.js"></script>
+</body>
+</html>
